@@ -7,7 +7,7 @@ export CUDA_VISIBLE_DEVICES="${CUDA_VISIBLE_DEVICES:-0,1}"
 SEED="${SEED:-1}"
 LOG_ROOT="${LOG_ROOT:-/home/lhp/project/SDCL2/logs}"
 DATA_DIR="${DATA_DIR:-/home/lhp/project/DATASETS/SYSU-MM01}"
-LOG_DIR="${LOG_DIR:-${LOG_ROOT}/0706/sysu_v39_ema_teacher_seed${SEED}_fullchain}"
+LOG_DIR="${LOG_DIR:-${LOG_ROOT}/0706/sysu_v39_ema_teacher_delay30_seed${SEED}_fullchain}"
 WORKERS="${WORKERS:-8}"
 EPOCHS="${EPOCHS:-60}"
 CMLABEL="${CMLABEL:-30}"
@@ -21,7 +21,7 @@ PROTO_BRIDGE_TEMP="${PROTO_BRIDGE_TEMP:-0.05}"
 PROTO_BRIDGE_MOMENTUM="${PROTO_BRIDGE_MOMENTUM:-0.1}"
 ENABLE_EMA_TEACHER="${ENABLE_EMA_TEACHER:-1}"
 EMA_TEACHER_DECAY="${EMA_TEACHER_DECAY:-0.999}"
-EMA_TEACHER_START="${EMA_TEACHER_START:-0}"
+EMA_TEACHER_START="${EMA_TEACHER_START:-30}"
 
 if [ "${SEED}" != "1" ]; then
     echo "Reference SYSU experiment is pinned to seed=1; got SEED=${SEED}." >&2
