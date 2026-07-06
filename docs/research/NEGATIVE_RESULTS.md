@@ -7,6 +7,7 @@
 | v31 GPRD-PLG | parser on `logs/0703/log_sysu_v31_gprd_plg_seed1_stage2only.txt` gives best 64.18/62.67/50.06 and 70.28/76.03/72.66 | below trusted reproduction | Reject. |
 | v34 IRMT | parser gives best 63.90/62.62/50.22 and 70.23/75.86/72.65 | restored but did not improve | Reject threshold-only continuation. |
 | v38 prototype bridge | parser gives best 63.27/61.57/48.85 and 69.73/75.43/71.73 | Stage-1 mechanism did not improve final result | Reject current implementation. |
+| v39 EMA teacher | parser on `logs/0706/log_sysu_v39_ema_teacher_seed1_fullchain.txt` gives epoch 22 all 12.31/13.22/6.29 and indoor 14.08/21.49/18.01 | Stage-1 collapse or feature-source bug | Reject; do not continue full run. |
 
 ## Historical Notes Only
 
