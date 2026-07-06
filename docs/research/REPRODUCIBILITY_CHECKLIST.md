@@ -1,0 +1,24 @@
+# Reproducibility Checklist
+
+- Seed: Python, NumPy, Torch CPU, Torch CUDA.
+- DataLoader worker seed and worker count.
+- Sampler class and sampler seed.
+- `cudnn.deterministic`, `cudnn.benchmark`.
+- TF32 setting.
+- Deterministic algorithm setting or explicit reason disabled.
+- DBSCAN eps, min samples, k1, k2, and feature source.
+- Reranking settings.
+- SYSU gallery trial count and mode: all-search or indoor-search.
+- RegDB trial and visible/thermal direction.
+- Checkpoint source and checkpoint hash if available.
+- Optimizer state and scheduler state.
+- Stage-1 handoff checkpoint and whether full state is restored.
+- Python, CUDA, PyTorch, scikit-learn, NumPy versions.
+- GPU model and CUDA_VISIBLE_DEVICES.
+- Full command and environment variables.
+- Git commit or `UNVERIFIED`.
+- Training log path.
+- Monitor log path.
+- Summary path.
+- Machine-readable result row.
+- Final decision: keep, revise, or reject.

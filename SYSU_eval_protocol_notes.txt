@@ -1,0 +1,19 @@
+SYSU-MM01 评测协议备忘（计划 protocol-check）
+============================================
+
+1. 当前主脚本 sdcl_sysu_originalmain_rcl_cwsl_v2_fix1.py 的 SYSU 指标为：
+   - FC 特征：query/gallery 经 extract_query_feat / extract_gall_feat，
+     已含原图与水平翻转特征平均 + L2 归一化（见 extract_query_feat）。
+   - 距离：余弦相似度等价于 matmul 后取负作 distmat，eval_sysu 与常见论文设置一致。
+
+2. k-reciprocal re-ranking / QA 等后处理：
+   - 训练聚类阶段已使用 compute_jaccard_distance（与伪标签相关），
+     与「测试阶段对最终距离矩阵做 rerank」不是同一回事。
+   - 若 SDCL 论文表格明确为「FC、无测试 rerank」，则正式对比论文时不应在
+     最终上报数字上加 rerank；若仅作附录可另开开关实现并对照。
+
+3. 结论：在未核对论文原文前，默认保持当前 FC 评测；若需附录 rerank，
+   需在代码中单独加 --test-rerank 类开关并注明与主表不可直接混比。
+
+4. 训练 batch：SYSU 脚本固定 IR/RGB 训练 batch 与 -b 相同；显存无法再增大时
+   可用 --grad-accum-steps>1 做梯度累积（仍按 -b 占显存）。

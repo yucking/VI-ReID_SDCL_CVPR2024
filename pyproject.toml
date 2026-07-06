@@ -1,0 +1,37 @@
+[tool.ruff]
+target-version = "py310"
+line-length = 120
+extend-exclude = [
+  "main_try",
+  "logs",
+  "logs-part1",
+  "examples/pretrained",
+]
+
+[tool.ruff.lint]
+select = [
+  "E9",
+  "F",
+  "I",
+  "B006",
+  "B007",
+  "B904",
+  "S603",
+  "S607",
+]
+ignore = [
+  "E501",
+  "S603",
+  "S607",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+addopts = "-q"
+
+[tool.mypy]
+python_version = "3.10"
+ignore_missing_imports = true
+warn_unused_configs = true
+strict_optional = true

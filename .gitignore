@@ -1,0 +1,12 @@
+.DS_Store
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+*.pyc
+*.pth
+*.pth.tar
+logs
+logs-part1
+*.log
+*.tmp
+AGENTS.md.bak.*
